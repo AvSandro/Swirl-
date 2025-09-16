@@ -1,0 +1,201 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fredoka One', cursive, sans-serif;
+  background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
+    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
+    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
+    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png');
+  background-size: 60px 60px, 40px 40px, 50px 50px, 35px 35px;
+  background-position:
+    10% 20%,
+    80% 10%,
+    60% 70%,
+    30% 80%;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Navbar Buttons */
+.navbar .nav-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  margin: 0 8px;
+  background: linear-gradient(90deg, #ff6ec4 0%, #7873f5 100%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 2px 8px rgba(120,115,245,0.08);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+.navbar .nav-btn:hover, .navbar .nav-btn:focus {
+  background: linear-gradient(90deg, #7873f5 0%, #ff6ec4 100%);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(120,115,245,0.18);
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  background: url('https://placekitten.com/1200/600') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #ff6ec4;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: #7873f5;
+}
+
+/* Gallery Section */
+.gallery {
+  background: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  padding: 0 10px 20px;
+  font-size: 1rem;
+}
+
+/* About Section */
+.about {
+  background: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.learn-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #7873f5;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.learn-link:hover {
+  background: #ff6ec4;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 20px;
+  color: #555;
+}
