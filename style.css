@@ -1,16 +1,22 @@
-/* General Reset */
+/* ------------------------------------------------------------
+   Cat World - Sunny Mango Kitten Theme
+   ------------------------------------------------------------ */
+
+/* ------------------- General Reset ------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ------------------- Base Body ----------------------------- */
 body {
   font-family: 'Fredoka One', cursive, sans-serif;
   background: linear-gradient(135deg, #FFE29F 0%, #FFA99F 50%, #FF719A 100%);
   min-height: 100vh;
-  position: relative;
   color: #4b2e2e;
+  line-height: 1.6;
+  background-attachment: fixed;
 }
 
 /* Optional subtle overlay texture */
@@ -24,28 +30,27 @@ body::before {
   background-size: 40px 40px;
 }
 
-/* Containers */
+/* ------------------- Containers ---------------------------- */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* Headings */
+/* ------------------- Typography ---------------------------- */
 h1, h2, h3, h4, h5 {
   font-weight: bold;
   color: #5a3d3d;
 }
 
-/* Paragraphs */
-p {
+p, li {
   color: #5c3a3a;
-  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* Links */
+/* ------------------- Links --------------------------------- */
 a {
   color: #ff8b5f;
   text-decoration: none;
@@ -55,64 +60,7 @@ a:hover {
   color: #ffb380;
 }
 
-/* Buttons - Variations */
-.button {
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  font-weight: bold;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  position: relative;
-}
-
-/* Mango sunshine button */
-.button.mango {
-  background: linear-gradient(45deg, #FFB347, #FFCC33);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.4);
-}
-.button.mango:hover {
-  background: linear-gradient(45deg, #FFC837, #FF8008);
-  box-shadow: 0 6px 20px rgba(255, 128, 8, 0.5);
-}
-
-/* Peach-pink soft button */
-.button.peach {
-  background: linear-gradient(45deg, #FEC8D8, #FFB7B2);
-  color: #4b2e2e;
-  box-shadow: 0 4px 15px rgba(254, 200, 216, 0.4);
-}
-.button.peach:hover {
-  background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
-  box-shadow: 0 6px 20px rgba(255, 154, 162, 0.5);
-}
-
-/* Accent panels / cards */
-.card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 2em;
-  margin: 1em 0;
-  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.1);
-}
-
-/* Footer / jump-to-bottom band */
-.footer-band {
-  background: linear-gradient(90deg, #FFB347, #FFCC33);
-  color: #fff;
-  text-align: center;
-  padding: 1em;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -4px 15px rgba(255, 179, 71, 0.3);
-}
-
-/* Navigation */
+/* ------------------- Navigation ---------------------------- */
 nav {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
@@ -126,17 +74,229 @@ nav {
   flex-wrap: wrap;
 }
 
+nav a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #5a3d3d;
+}
+nav a:hover {
+  color: #ff8b5f;
+}
+
+/* ------------------- Jump Link ----------------------------- */
 .jump {
   text-align: center;
+  margin: 1em 0;
+}
+.mini-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFB347, #FFCC33);
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.mini-btn:hover {
+  background: linear-gradient(45deg, #FFC837, #FF8008);
+}
+
+/* ------------------- Sections General ---------------------- */
+section {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2em 1.5em;
+  margin: 2em auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.1);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  padding: 4em 1.5em;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+
+/* ------------------- Call to Action Buttons ---------------- */
+.cta {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #FFB347, #FFCC33);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.4);
+  text-decoration: none;
+}
+.cta:hover {
+  background: linear-gradient(45deg, #FFC837, #FF8008);
+  box-shadow: 0 6px 20px rgba(255, 128, 8, 0.5);
+}
+
+/* Back to Top button */
+.back-top {
   margin-top: 1em;
 }
 
+/* ------------------- Gallery Grid -------------------------- */
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+.cards .card {
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cards .card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
+}
+
+.cards .card h3 {
+  font-size: 1.3rem;
+  margin: 0.5em 0;
+}
+
+/* ------------------- Facts List ---------------------------- */
+.facts h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.facts ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.facts li {
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* ------------------- Paragraph Section --------------------- */
+.paras h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.paras p {
+  margin: 1em 0;
+  font-size: 1.1rem;
+}
+
+/* ------------------- Audio Section ------------------------- */
+.audio-box h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.audio-box audio {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* ------------------- About Section ------------------------- */
+.about h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.learn-link {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  background: linear-gradient(45deg, #FEC8D8, #FFB7B2);
+  color: #4b2e2e;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.learn-link:hover {
+  background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
+}
+
+/* ------------------- Contact Section ----------------------- */
+.contact h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.contact p {
+  text-align: center;
+  margin: 0.5em 0;
+}
+.contact .mini-btn {
+  margin: 0.25em;
+}
+
+/* ------------------- Footer ------------------------------- */
 .footer {
   text-align: center;
   padding: 2em;
   color: #fff;
   background: linear-gradient(90deg, #FFB347, #FFCC33);
+  border-radius: 15px 15px 0 0;
+  margin-top: 2em;
 }
+
+/* ------------------- Utility Classes ----------------------- */
+/* Buttons Variations if needed */
+.button.mango {
+  background: linear-gradient(45deg, #FFB347, #FFCC33);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.4);
+}
+.button.mango:hover {
+  background: linear-gradient(45deg, #FFC837, #FF8008);
+}
+
+.button.peach {
+  background: linear-gradient(45deg, #FEC8D8, #FFB7B2);
+  color: #4b2e2e;
+}
+.button.peach:hover {
+  background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .cta {
+    font-size: 0.9rem;
+  }
+}
+
 
 
 
