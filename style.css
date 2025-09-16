@@ -92,6 +92,7 @@ body::before {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  color: #43c6ac;
 }
 
 .hero p {
