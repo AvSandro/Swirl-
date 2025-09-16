@@ -5,201 +5,129 @@
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: 'Fredoka One', cursive, sans-serif;
-  background: linear-gradient(135deg, #fff2b2 0%, #ffb347 100%);
+  background: linear-gradient(135deg, #FFE29F 0%, #FFA99F 50%, #FF719A 100%);
   min-height: 100vh;
   position: relative;
-  color: #5a4633; /* warm brown text */
+  color: #4b2e2e;
 }
 
-/* Paw-print overlay */
+/* Optional subtle overlay texture */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   pointer-events: none;
-  background-image:
-    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
-    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
-    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png'),
-    url('https://cdn.pixabay.com/photo/2013/07/12/13/57/paw-147409_1280.png');
-  background-size: 60px 60px, 40px 40px, 50px 50px, 35px 35px;
-  background-position:
-    10% 20%,
-    80% 10%,
-    60% 70%,
-    30% 80%;
-  background-repeat: no-repeat;
-  opacity: 0.10;
-  scroll-behavior: smooth;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(255, 181, 92, 0.95); /* mango orange */
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 15px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  z-index: 1000;
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* Navbar Buttons */
-.navbar .nav-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 0 8px;
-  background: linear-gradient(90deg, #ffdd59 0%, #ff7b54 100%);
-  color: #fff;
+/* Headings */
+h1, h2, h3, h4, h5 {
   font-weight: bold;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-}
-.navbar .nav-btn:hover {
-  background: linear-gradient(90deg, #ff7b54 0%, #ffdd59 100%);
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #5a3d3d;
 }
 
-/* Hero Section */
-.hero {
-  height: 80vh;
-  background: url('https://placekitten.com/1200/600') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+/* Paragraphs */
+p {
+  color: #5c3a3a;
+  line-height: 1.6;
 }
-.hero-content {
-  background: rgba(255, 181, 92, 0.6);
-  padding: 30px;
-  border-radius: 15px;
+
+/* Links */
+a {
+  color: #ff8b5f;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #fff2b2 0%, #ffb347 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+a:hover {
+  color: #ffb380;
 }
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.cta {
+
+/* Buttons - Variations */
+.button {
   display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(90deg, #ffdd59, #ff7b54);
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-.cta:hover {
-  background: linear-gradient(90deg, #ff7b54, #ffdd59);
-}
-
-/* Jump link bar */
-.jump {
-  text-align: center;
-  padding: 10px 0;
-  background: linear-gradient(135deg, #fff2b2 0%, #ffb347 100%);
-}
-.mini-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 18px;
-  text-decoration: none;
-  background: #ff7b54;
-  color: #fff;
-  transition: transform .2s ease, opacity .2s ease;
-}
-.mini-btn:hover { transform: translateY(-2px); opacity: .9; }
-
-/* Sections */
-.section, .gallery, .about, .contact {
-  padding: 60px 20px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 16px;
-  margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-}
-
-/* Gallery Cards */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.card {
-  width: 300px;
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-.card h3 { margin: 10px 0 5px; }
-.card p { padding: 0 10px 20px; font-size: 1rem; }
-
-/* Facts list */
-.facts ul {
-  max-width: 700px;
-  margin: 20px auto 0;
-  text-align: left;
-  list-style: disc inside;
-  line-height: 1.8;
-}
-
-/* Unique paragraphs */
-.paras p {
-  max-width: 800px;
-  margin: 14px auto;
-  padding: 14px 16px;
+  padding: 0.75em 1.5em;
+  font-weight: bold;
   border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  position: relative;
 }
-.paras .para-one  { background: #fff4c2; border: 1px solid #ffdd59; }
-.paras .para-two  { background: #ffedc2; border: 1px solid #ffc477; }
-.paras .para-three{ background: #ffe4c2; border: 1px solid #ffb347; }
 
-/* Audio */
-.audio-box audio { margin-top: 14px; width: 280px; }
+/* Mango sunshine button */
+.button.mango {
+  background: linear-gradient(45deg, #FFB347, #FFCC33);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.4);
+}
+.button.mango:hover {
+  background: linear-gradient(45deg, #FFC837, #FF8008);
+  box-shadow: 0 6px 20px rgba(255, 128, 8, 0.5);
+}
 
-/* Contact */
-.contact .mini-btn { margin: 8px; }
-.back-top { margin-top: 16px; }
+/* Peach-pink soft button */
+.button.peach {
+  background: linear-gradient(45deg, #FEC8D8, #FFB7B2);
+  color: #4b2e2e;
+  box-shadow: 0 4px 15px rgba(254, 200, 216, 0.4);
+}
+.button.peach:hover {
+  background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
+  box-shadow: 0 6px 20px rgba(255, 154, 162, 0.5);
+}
 
-/* Footer */
-.footer {
-  background: rgba(255,181,92,0.95);
+/* Accent panels / cards */
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2em;
+  margin: 1em 0;
+  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.1);
+}
+
+/* Footer / jump-to-bottom band */
+.footer-band {
+  background: linear-gradient(90deg, #FFB347, #FFCC33);
+  color: #fff;
   text-align: center;
-  padding: 20px;
-  color: #5a4633;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 15px rgba(255, 179, 71, 0.3);
+}
+
+/* Navigation */
+nav {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1em;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+  margin: 0 1em;
+  color: #5a3d3d;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ff8b5f;
 }
 
 
