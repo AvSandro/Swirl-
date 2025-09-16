@@ -1,51 +1,46 @@
-/* ------------------------------------------------------------------
-   cat world — styles by sandro
-   simple rules, mango gradient, a few cards, done.
-   (yes, comments are for humans, not just compilers)
-------------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+   cat world styles — sandro edition
+   mango gradient, some cards, smooth scroll… cats everywhere
+   (css can have a little personality too)
+---------------------------------------------------------------- */
 
-
-/* ---- reset: make browsers behave ---- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-
-/* ---- tokens: colors etc. change here if you feel brave ---- */
-:root {
-  --ink: #4b2e2e;          /* body text */
-  --ink2: #5a3d3d;         /* headings */
-  --bg1: #FFE29F;          /* gradient start */
-  --bg2: #FFA99F;          /* gradient middle */
-  --bg3: #FF719A;          /* gradient end */
-  --m1: #FFB347;           /* mango button start */
-  --m2: #FFCC33;           /* mango button end */
-  --p1: #FEC8D8;           /* peach start (links) */
-  --p2: #FFB7B2;           /* peach end   (links) */
-
-  --r-lg: 20px;            /* big radius */
-  --r-md: 12px;            /* medium radius */
-  --shadow-lg: 0 8px 30px rgba(255,149,0,.12);
-  --shadow-md: 0 4px 16px rgba(0,0,0,.06);
-
-  --maxw: 1200px;          /* container width */
+/* smooth scrolling so clicks glide down not teleport */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; } /* respect users that don’t want motion */
 }
 
+/* ok reset stuff bc browsers act wild by default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* ------------------------------------------------------------------
-   background + base type
-   (mango gradient stays; it’s the brand now, sorry)
-------------------------------------------------------------------- */
-html, body { height: 100%; }
+/* colors i keep using — tweak here to vibe check */
+:root {
+  --ink: #4b2e2e;   /* normal text */
+  --ink2: #5a3d3d;  /* headings text */
+  --bg1: #FFE29F;   /* gradient start */
+  --bg2: #FFA99F;   /* middle */
+  --bg3: #FF719A;   /* end */
+  --m1: #FFB347;    /* mango button start */
+  --m2: #FFCC33;    /* mango button end */
+  --p1: #FEC8D8;    /* peach start for links */
+  --p2: #FFB7B2;    /* peach end for links */
+}
 
+/* base body — mango gradient forever */
 body {
   font-family: 'Fredoka One', cursive, sans-serif;
   color: var(--ink);
   background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
-  background-attachment: fixed; /* don’t scroll the gradient */
+  background-attachment: fixed;
   line-height: 1.6;
-  position: relative;           /* for the dotted overlay below */
+  position: relative; /* needed for overlay */
 }
 
-/* dotted overlay so it looks slightly “crafted” */
+/* dotted overlay bc flat colors are boring */
 body::before {
   content: "";
   position: fixed;
@@ -56,110 +51,94 @@ body::before {
   background-size: 40px 40px;
 }
 
-
-/* ------------------------------------------------------------------
-   type: headings + links
-------------------------------------------------------------------- */
-h1, h2, h3 { color: var(--ink2); font-weight: 700; }
+/* headings / text */
+h1,h2,h3 {
+  color: var(--ink2);
+  font-weight: 700;
+}
 h1 { font-size: 2.4rem; line-height: 1.12; }
 h2 { font-size: 1.6rem; margin-bottom: .7rem; }
 h3 { font-size: 1.2rem; margin: .5rem 0; }
-p, li { color: #5c3a3a; font-size: 1rem; }
+p,li { color: #5c3a3a; font-size: 1rem; }
 
-a { color: #ff8b5f; text-decoration: none; transition: color .25s; }
+/* links — peachy hover */
+a {
+  color: #ff8b5f;
+  text-decoration: none;
+  transition: color .25s;
+}
 a:hover { color: #ffb380; }
 
-
-/* ------------------------------------------------------------------
-   nav: top bar, centered, minimal
-------------------------------------------------------------------- */
+/* --- nav bar (glass-ish) --- */
 .headerBar {
   background: rgba(255,255,255,.6);
-  backdrop-filter: blur(10px);         /* glassy but not too much */
+  backdrop-filter: blur(10px);
   padding: 1em;
   border-radius: 0 0 15px 15px;
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
   display: flex;
   justify-content: center;
   gap: 1.5em;
-  flex-wrap: wrap;                     /* wrap on small screens */
+  flex-wrap: wrap;
 }
-
 .headerBar a {
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--ink2);
 }
-
 .headerBar a:hover { color: #ff8b5f; }
 
-
-/* ------------------------------------------------------------------
-   jump link: because scrolling is a skill issue sometimes
-------------------------------------------------------------------- */
+/* jump link section — bc scrolling takes time */
 .jumpRow {
   text-align: center;
   margin: 1em 0;
 }
 
-
-/* ------------------------------------------------------------------
-   buttons: main + small (gradient = mango)
-------------------------------------------------------------------- */
+/* --- buttons --- */
 .btnMain {
   display: inline-block;
   padding: .75em 1.5em;
   font-weight: 700;
   font-size: 1rem;
   border: 0;
-  border-radius: var(--r-md);
+  border-radius: 12px;
   cursor: pointer;
   transition: all .25s;
   color: #fff;
-  background: linear-gradient(45deg, var(--m1), var(--m2));
+  background: linear-gradient(45deg,var(--m1),var(--m2));
   box-shadow: 0 4px 15px rgba(255,179,71,.35);
 }
-
 .btnMain:hover {
-  background: linear-gradient(45deg, #FFC837, #FF8008);
+  background: linear-gradient(45deg,#FFC837,#FF8008);
   box-shadow: 0 6px 20px rgba(255,128,8,.45);
 }
-
 .btnSmall {
   display: inline-block;
   padding: .5em 1em;
   font-weight: 700;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(45deg, var(--m1), var(--m2));
+  background: linear-gradient(45deg,var(--m1),var(--m2));
   transition: all .25s;
 }
+.btnSmall:hover { background: linear-gradient(45deg,#FFC837,#FF8008); }
+.toTop { margin-top: 1em; }
 
-.btnSmall:hover { background: linear-gradient(45deg, #FFC837, #FF8008); }
-
-.toTop { margin-top: 1em; } /* spacing for that back-to-top button */
-
-
-/* ------------------------------------------------------------------
-   pageWrap: the card every section uses (glass-ish)
-------------------------------------------------------------------- */
+/* --- the pageWrap (my container card) --- */
 .pageWrap {
   width: 90%;
-  max-width: var(--maxw);
+  max-width: 1200px;
   margin: 2em auto;
   background: rgba(255,255,255,.65);
   backdrop-filter: blur(8px);
-  border-radius: var(--r-lg);
+  border-radius: 20px;
   padding: 2em 1.5em;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 30px rgba(255,149,0,.12);
   position: relative;
-  z-index: 1; /* stay above the dotted overlay */
+  z-index: 1;
 }
 
-
-/* ------------------------------------------------------------------
-   hero: big welcome area (no sliders, we’re chill)
-------------------------------------------------------------------- */
+/* hero area — big welcome */
 .heroUnit .pageWrap {
   text-align: center;
   background: rgba(255,255,255,.55);
@@ -167,75 +146,52 @@ a:hover { color: #ffb380; }
   padding: 4em 1.5em;
   border-radius: 24px;
 }
-
 .heroUnit p { margin: .6em 0 1.6em; }
 
-
-/* ------------------------------------------------------------------
-   gallery: responsive grid w/ simple cards
-------------------------------------------------------------------- */
+/* gallery grid — responsive and simple */
 .galleryBlock .pageWrap h2 { text-align: center; }
-
 .gridCats {
   display: grid;
   gap: 1.5em;
   margin-top: 1.4em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
 }
-
 .card {
   background: rgba(255,255,255,.85);
   border-radius: 16px;
   padding: 1em;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
 }
-
 .card img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: .55em;
 }
-
 .card h3 { margin: .4em 0 .2em; }
 
-
-/* ------------------------------------------------------------------
-   facts: list but make it tidy
-------------------------------------------------------------------- */
+/* facts — tidy list */
 .factsBlock .pageWrap h2 { text-align: center; }
-
 .listFacts {
   list-style: none;
   padding: 0;
   max-width: 600px;
   margin: 0 auto;
 }
-
 .listFacts li {
   padding: .55em 0;
   text-align: center;
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-
-/* ------------------------------------------------------------------
-   text trio: the 3 “modes” — give each a tiny twist
-------------------------------------------------------------------- */
-.textTrio .pageWrap h2 {
-  text-align: center;
-  margin-bottom: .6em;
-}
-
-/* one: mango border, straight */
+/* textTrio — the 3 modes */
+.textTrio .pageWrap h2 { text-align: center; margin-bottom: .6em; }
 .tOne {
   background: rgba(255,255,255,.34);
   padding: 1em;
   margin: .55em 0;
   border-left: 6px solid var(--m1);
 }
-
-/* two: peach border, slight skew (yes, a little drama) */
 .tTwo {
   background: rgba(255,255,255,.34);
   padding: 1em;
@@ -243,8 +199,6 @@ a:hover { color: #ffb380; }
   border-left: 6px solid var(--bg2);
   transform: skewX(-1deg);
 }
-
-/* three: pink border, tiny letter spacing */
 .tThree {
   background: rgba(255,255,255,.34);
   padding: 1em;
@@ -253,24 +207,12 @@ a:hover { color: #ffb380; }
   letter-spacing: .2px;
 }
 
-
-/* ------------------------------------------------------------------
-   audio: center the player, no weird skins
-------------------------------------------------------------------- */
+/* audio panel */
 .audioPanel .pageWrap h2 { text-align: center; }
+.audioPanel audio { display: block; width: 80%; margin: 0 auto; }
 
-.audioPanel audio {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-}
-
-
-/* ------------------------------------------------------------------
-   about: pastel links that look tappable
-------------------------------------------------------------------- */
+/* about section */
 .aboutBlock .pageWrap h2 { text-align: center; }
-
 .linkTag {
   display: inline-block;
   margin: .4em .3em;
@@ -278,41 +220,33 @@ a:hover { color: #ffb380; }
   font-weight: 700;
   border-radius: 10px;
   color: var(--ink);
-  background: linear-gradient(45deg, var(--p1), var(--p2));
+  background: linear-gradient(45deg,var(--p1),var(--p2));
   transition: all .25s;
 }
+.linkTag:hover {
+  background: linear-gradient(45deg,#FF9AA2,#FFB7B2);
+}
 
-.linkTag:hover { background: linear-gradient(45deg, #FF9AA2, #FFB7B2); }
-
-
-/* ------------------------------------------------------------------
-   contact: centered, keep it friendly
-------------------------------------------------------------------- */
+/* contact card */
 .contactCard .pageWrap h2 { text-align: center; }
 .contactCard .pageWrap p { text-align: center; }
-.contactCard .btnSmall { margin: .25em; } /* tiny gap between buttons */
+.contactCard .btnSmall { margin: .25em; }
 
-
-/* ------------------------------------------------------------------
-   footer: mango bar for the win
-------------------------------------------------------------------- */
+/* footer note */
 .footerNote {
   text-align: center;
   padding: 2em;
   color: #fff;
-  background: linear-gradient(90deg, var(--m1), var(--m2));
+  background: linear-gradient(90deg,var(--m1),var(--m2));
   border-radius: 15px 15px 0 0;
   margin-top: 2em;
 }
 
-
-/* ------------------------------------------------------------------
-   responsive: small screens but still nice
-------------------------------------------------------------------- */
+/* responsive tweaks */
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
   .btnMain { font-size: .95rem; }
-  .audioPanel audio { width: 100%; } /* mobile audio width */
+  .audioPanel audio { width: 100%; }
 }
 
 
