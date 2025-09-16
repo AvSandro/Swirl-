@@ -3,95 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cat World</title>
+  <title>cat world</title>
 
-  <!-- favicons (keep files in repo root) -->
+  <!-- ---- favicons + meta (leave alone) ---- -->
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-
   <meta name="theme-color" content="#FFB347" />
+
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <!-- smooth scroll (so anchors glide, not jump) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
 
 <body id="top">
-  <!-- top nav, centered -->
+
+  <!-- ---- top nav (basic but it works) ---- -->
   <nav class="headerBar">
-    <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#facts">Facts</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">home</a>
+    <a href="#gallery">gallery</a>
+    <a href="#facts">facts</a>
+    <a href="#about">about</a>
+    <a href="#contact">contact</a>
   </nav>
 
-  <!-- quick jump under nav -->
+  <!-- ---- quick jump bc scrolling is slow ---- -->
   <div class="jumpRow">
-    <a class="btnSmall" href="#gallery">↓ Jump to gallery</a>
+    <a class="btnSmall" href="#gallery">↓ jump to gallery</a>
   </div>
 
-  <!-- hero -->
+  <!-- ---- big welcome section (hero – first thing you see) ---- -->
   <section id="home" class="heroUnit">
     <div class="pageWrap">
-      <h1>Cat World</h1>
-      <p>paws, naps, chaos. that’s the site.</p>
-      <a class="btnMain" href="#gallery">see the cats</a>
+      <h1>cat world 🐾</h1>
+      <p>curious cats, cozy naps, real photos.</p>
+      <a class="btnMain" href="#gallery">open gallery</a>
     </div>
   </section>
 
-  <!-- gallery -->
+  <!-- ---- cat squad gallery (pics + chaos) ---- -->
   <section id="gallery" class="galleryBlock">
     <div class="pageWrap">
-      <h2>Gallery</h2>
+      <h2>meet the cats</h2>
       <div class="gridCats">
         <article class="card">
-          <img src="IMG_0257.jpeg" alt="Luna" loading="lazy">
+          <img src="IMG_0257.jpeg" alt="Luna the cat" loading="lazy">
           <h3>Luna</h3>
-          <p>cuddle-first agenda.</p>
+          <p>playful, people-friendly, lap seeker.</p>
         </article>
         <article class="card">
-          <img src="IMG_0258.jpeg" alt="Oliver" loading="lazy">
+          <img src="IMG_0258.jpeg" alt="Oliver the cat" loading="lazy">
           <h3>Oliver</h3>
-          <p>lives in sunbeams.</p>
+          <p>sunbeam chaser. elite napper.</p>
         </article>
         <article class="card">
-          <img src="IMG_0262.jpeg" alt="Milo" loading="lazy">
+          <img src="IMG_0262.jpeg" alt="Milo the cat" loading="lazy">
           <h3>Milo</h3>
-          <p>speed runner. toys only.</p>
+          <p>fast paws. toy hunter. zooms a lot.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- facts -->
+  <!-- ---- random trivia (aka cat facts) ---- -->
   <section id="facts" class="factsBlock">
     <div class="pageWrap">
-      <h2>Facts</h2>
+      <h2>cat facts</h2>
       <ul class="listFacts">
-        <li>cats sleep 12–16 hours</li>
-        <li>a group of kittens = “kindle”</li>
-        <li>nose prints are unique</li>
-        <li>100+ sounds (dogs ≈ 10)</li>
+        <li>cats sleep 12–16 hours a day.</li>
+        <li>a group of kittens is a “kindle.”</li>
+        <li>every cat’s nose print is unique.</li>
+        <li>cats make 100+ sounds (dogs ≈ 10).</li>
       </ul>
     </div>
   </section>
 
-  <!-- three paragraphs, all styled differently -->
+  <!-- ---- cat modes (the 3 moods of cats) ---- -->
   <section class="textTrio">
     <div class="pageWrap">
-      <h2>cat modes</h2>
-      <p class="tOne">scout mode — quiet, checks everything.</p>
-      <p class="tTwo">nap mode — battery save on.</p>
-      <p class="tThree">zoom mode — laps around furniture.</p>
+      <h2>three cat modes</h2>
+      <p class="tOne">explorer — quiet steps, checks everything.</p>
+      <p class="tTwo">nap — finds the warm spot, powers down.</p>
+      <p class="tThree">zoom — sudden laps, energy out of nowhere.</p>
     </div>
   </section>
 
-  <!-- audio (might not work at school bc of wifi TT) -->
+  <!-- ---- listen to a meow (audio bit) ---- -->
   <section class="audioPanel">
     <div class="pageWrap">
-      <h2>meow</h2>
+      <h2>meow sample</h2>
       <audio controls>
         <source src="cat-meow-2.mp3" type="audio/mpeg">
         your browser doesn’t support audio.
@@ -99,21 +106,21 @@
     </div>
   </section>
 
-  <!-- about -->
+  <!-- ---- about cat world (why i made this) ---- -->
   <section id="about" class="aboutBlock">
     <div class="pageWrap">
-      <h2>about</h2>
-      <p>made for hack club swirl. just html/css.</p>
-      <a class="linkTag" href="https://en.wikipedia.org/wiki/Cat" target="_blank" rel="noopener">learn more</a>
-      <a class="linkTag" href="https://github.com/AvSandro/Swirl-" target="_blank" rel="noopener">repo</a>
+      <h2>about cat world</h2>
+      <p>built for hack club swirl with pure html/css.</p>
+      <a class="linkTag" href="https://en.wikipedia.org/wiki/Cat" target="_blank" rel="noopener">learn about cats</a>
+      <a class="linkTag" href="https://github.com/AvSandro/Swirl-" target="_blank" rel="noopener">view the repo</a>
     </div>
   </section>
 
-  <!-- contact -->
+  <!-- ---- contact me (send cat pics, please) ---- -->
   <section id="contact" class="contactCard">
     <div class="pageWrap">
       <h2>contact</h2>
-      <p>send cat pics or feedback:</p>
+      <p>send feedback or cat pics:</p>
       <p>
         <a class="btnSmall" href="mailto:drololl06@gmail.com">email</a>
         <a class="btnSmall" href="tel:+16824728184">call</a>
@@ -122,12 +129,15 @@
     </div>
   </section>
 
-  <!-- footer -->
+  <!-- ---- footer (bye) ---- -->
   <footer class="footerNote">
     <p>built by sandro • hack club swirl</p>
   </footer>
+
 </body>
 </html>
+
+
 
 
 
