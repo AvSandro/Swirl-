@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------
-   Cat World - Sunny Mango Kitten Theme
+   Cat World - Sunny Mango Kitten Theme (Containers Restored)
    ------------------------------------------------------------ */
 
 /* ------------------- General Reset ------------------------- */
@@ -37,6 +37,16 @@ body::before {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+/* Give containers inside sections the “card” look */
+section .container {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2em 1.5em;
+  margin: 2em auto;
+  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.1);
 }
 
 /* ------------------- Typography ---------------------------- */
@@ -101,23 +111,13 @@ nav a:hover {
   background: linear-gradient(45deg, #FFC837, #FF8008);
 }
 
-/* ------------------- Sections General ---------------------- */
-section {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 2em 1.5em;
-  margin: 2em auto;
-  max-width: 1200px;
-  box-shadow: 0 8px 30px rgba(255, 149, 0, 0.1);
-}
-
-/* Hero Section */
-.hero {
+/* ------------------- Hero Section -------------------------- */
+.hero .container {
   text-align: center;
   background: rgba(255,255,255,0.5);
   backdrop-filter: blur(5px);
   padding: 4em 1.5em;
+  border-radius: 20px;
 }
 .hero h1 {
   font-size: 2.5rem;
@@ -154,7 +154,7 @@ section {
 }
 
 /* ------------------- Gallery Grid -------------------------- */
-.gallery h2 {
+.gallery .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
@@ -186,7 +186,7 @@ section {
 }
 
 /* ------------------- Facts List ---------------------------- */
-.facts h2 {
+.facts .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
@@ -203,28 +203,28 @@ section {
 }
 
 /* ------------------- Paragraph Section --------------------- */
-.paras h2 {
+.paras .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
-.paras p {
+.paras .container p {
   margin: 1em 0;
   font-size: 1.1rem;
 }
 
 /* ------------------- Audio Section ------------------------- */
-.audio-box h2 {
+.audio-box .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
-.audio-box audio {
+.audio-box .container audio {
   display: block;
   margin: 0 auto;
   width: 80%;
 }
 
 /* ------------------- About Section ------------------------- */
-.about h2 {
+.about .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
@@ -243,11 +243,11 @@ section {
 }
 
 /* ------------------- Contact Section ----------------------- */
-.contact h2 {
+.contact .container h2 {
   text-align: center;
   margin-bottom: 1em;
 }
-.contact p {
+.contact .container p {
   text-align: center;
   margin: 0.5em 0;
 }
@@ -266,7 +266,6 @@ section {
 }
 
 /* ------------------- Utility Classes ----------------------- */
-/* Buttons Variations if needed */
 .button.mango {
   background: linear-gradient(45deg, #FFB347, #FFCC33);
   color: #fff;
@@ -284,7 +283,7 @@ section {
   background: linear-gradient(45deg, #FF9AA2, #FFB7B2);
 }
 
-/* Responsive tweaks */
+/* ------------------- Responsive Tweaks --------------------- */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -296,6 +295,7 @@ section {
     font-size: 0.9rem;
   }
 }
+
 
 
 
