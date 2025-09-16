@@ -206,3 +206,48 @@ body::before {
   padding: 20px;
   color: #555;
 }
+/* Quick jump link */
+.jump {
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(255,255,255,0.7);
+}
+.mini-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  background: #7873f5;
+  color: #fff;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.mini-btn:hover { transform: translateY(-2px); opacity: .9; }
+
+/* Generic section */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+}
+
+/* Facts list */
+.facts ul {
+  max-width: 700px;
+  margin: 20px auto 0;
+  text-align: left;
+  list-style: disc inside;
+  line-height: 1.8;
+}
+
+/* Three unique paragraphs */
+.paras p { max-width: 800px; margin: 14px auto; padding: 14px 16px; border-radius: 12px; }
+.paras .para-one  { background: #fff3cd; border: 1px solid #ffe08a; }
+.paras .para-two  { background: #e8f7ff; border: 1px solid #bfe9ff; }
+.paras .para-three{ background: #f3e8ff; border: 1px solid #e0c7ff; }
+
+/* Audio box */
+.audio-box audio { margin-top: 14px; width: 280px; }
+
+/* Contact */
+.contact .mini-btn { margin: 8px; }
+.back-top { margin-top: 16px; }
